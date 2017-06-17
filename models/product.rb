@@ -19,6 +19,17 @@ class Product
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
+
+  def find
+    sql = "SELECT * FROM products WHERE id = #{id}"
+    results = SqlRunner.run(sql)
+    return Product.new(results.first)
+  end
+
+  def update
+    sql = "UPDATE products SET (name, quantity) = ('#{name}', #{quantity}) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
   
   def self.all
     sql = "SELECT * FROM products"
