@@ -20,4 +20,10 @@ class Product
     @id = results.first['id'].to_i
   end
   
+  def self.all
+    sql = "SELECT * FROM products"
+    results_hash = SqlRunner.run(sql)
+    return results_hash.map { |product| Product.new(product) }
+  end
+
 end

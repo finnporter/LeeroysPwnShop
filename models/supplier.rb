@@ -15,5 +15,11 @@ class Supplier
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
+
+  def self.all
+    sql = "SELECT * FROM suppliers"
+    results_hash = SqlRunner.run(sql)
+    return results_hash.map { |supplier| Supplier.new(supplier) }
+  end
   
 end
