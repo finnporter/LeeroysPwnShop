@@ -18,15 +18,14 @@ supplier_02.save
 
 product_01 = Product.new({
   "name" => "Iron Cleaver",
-  "quantity" => 15
+  "quantity" => 15,
+  "supplier_id" => supplier_01.id
   })
 product_02 = Product.new({
-  "nane" => "Searing Blade",
-  "quantity" => 8
+  "name" => "Searing Blade",
+  "quantity" => 8,
+  "supplier_id" => supplier_02.id
   })
 
 product_01.save
 product_02.save
-
-binding.pry
-nil

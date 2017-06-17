@@ -13,9 +13,10 @@ class Product
     @quantity = options['quantity']
     @supplier_id = options['supplier_id'].to_i
   end
-  
+
   def save
-    sql = "INSERT INTO products (name, quantity) VALUES ('#{name}', #{quantity}) RETURNING id;"
+    sql = "INSERT INTO products (name, quantity, supplier_id) VALUES ('#{name}', #{quantity}, #{supplier_id}) RETURNING id;"
+    binding.pry
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
