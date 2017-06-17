@@ -11,7 +11,7 @@ class Supplier
   end
   
   def save()
-    sql = "INSERT INTO suppliers (name) VALUES ('#{name}') RETURNING id;"
+    sql = "INSERT INTO suppliers (name) VALUES ('#{@name}') RETURNING id;"
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
@@ -32,11 +32,11 @@ class Supplier
     SqlRunner.run(sql)
   end
 
-  # def all_products
-  #   sql = "SELECT * FROM products WHERE supplier_id = #{@id}"
-  #   products_hash = SqlRunner.run(sql)
-  #   product = products_hash.map { |product| Product.new(product)  }
-  # end
+  def all_products
+    sql = "SELECT * FROM products WHERE supplier_id = #{@id}"
+    products_hash = SqlRunner.run(sql)
+    product = products_hash.map { |product| Product.new(product)  }
+  end
 
   def self.all
     sql = "SELECT * FROM suppliers"

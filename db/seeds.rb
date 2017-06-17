@@ -29,3 +29,7 @@ product_02 = Product.new({
 
 product_01.save
 product_02.save
+
+
+binding.pry
+nil 

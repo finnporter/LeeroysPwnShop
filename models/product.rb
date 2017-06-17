@@ -15,8 +15,7 @@ class Product
   end
 
   def save
-    sql = "INSERT INTO products (name, quantity, supplier_id) VALUES ('#{name}', #{quantity}, #{supplier_id}) RETURNING id;"
-    binding.pry
+    sql = "INSERT INTO products (name, quantity, supplier_id) VALUES ('#{@name}', #{@quantity}, #{@supplier_id}) RETURNING *;"
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
