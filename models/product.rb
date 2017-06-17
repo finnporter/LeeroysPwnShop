@@ -30,6 +30,11 @@ class Product
     sql = "UPDATE products SET (name, quantity) = ('#{name}', #{quantity}) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
+
+  def delete
+    sql = "DELETE FROM products WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
   
   def self.all
     sql = "SELECT * FROM products"
