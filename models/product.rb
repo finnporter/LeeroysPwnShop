@@ -37,4 +37,9 @@ class Product
     return results_hash.map { |product| Product.new(product) }
   end
 
+  def self.delete_all
+    sql = "DELETE FROM products"
+    SqlRunner.run(sql)
+  end
+
 end

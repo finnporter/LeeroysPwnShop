@@ -32,5 +32,10 @@ class Supplier
     results_hash = SqlRunner.run(sql)
     return results_hash.map { |supplier| Supplier.new(supplier) }
   end
+
+  def self.delete_all
+    sql = "DELETE FROM suppliers"
+    SqlRunner.run(sql)
+  end
   
 end
