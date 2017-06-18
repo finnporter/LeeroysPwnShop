@@ -4,8 +4,8 @@ require_relative '../models/supplier.rb'
 require_relative '../models/product.rb'
 require_relative '../models/inventory.rb'
 
-Supplier.delete_all
 Product.delete_all
+Supplier.delete_all
 
 supplier_01 = Supplier.new({
   "name" => "Saru Steelfury"

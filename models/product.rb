@@ -54,5 +54,4 @@ class Product
     sql = "DELETE FROM products"
     SqlRunner.run(sql)
   end
-
 end
