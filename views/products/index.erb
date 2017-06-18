@@ -1,1 +1,19 @@
-<p>Sinatra knows this ditty.</p>
+<h1>Inventory</h1>
+
+<table>
+  <tr>
+    <th>Product Number</th>
+    <th>Product Name</th>
+    <th>Stock</th>
+    <th>Supplier</th>
+  </tr>
+  <% for product in @products %>
+  <tr>
+    <td><%= product.id %></td>
+    <td><%= product.name %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.which_supplier.name %></td>
+  <% end %>
+  </tr>
+
+</table>
