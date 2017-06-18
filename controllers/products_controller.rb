@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'sinatra/contrib/all'
-require 'pry-byebug'
 
-require_relative '../models/products'
+require_relative '../models/product.rb'
 
-get 
+get '/products' do
+  @products = Product.all
+  erb(:"products/index")
+end
