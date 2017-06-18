@@ -2,6 +2,6 @@ require 'sinatra'
 require 'sinatra/contrib/all'
 require 'pry-byebug'
 
-require_relative '../models/products'
-
-get 
+get '*/' do
+  erb(:index)
+end

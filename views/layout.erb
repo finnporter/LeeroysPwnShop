@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Finn Porter">
+  <link rel="shortcut icon" type="image/png" href="/img/favicon_sword_48.png"/>
+  <title>Leeroy's Pwn Shop</title>
+</head>
+<body>
+  <img src="http://via.placeholder.com/350x150" alt="logo">
+  <nav>
+    <ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/inventory">Inventory</a></li>
+      <li><a href="/suppliers">Suppliers</a></li>
+      <li><a href="/add">Add</a></li>
+      <li><a href="/finances">Finances</a></li>
+      <li><a href="/languages">Languages</a></li>
+    </ul>
+  </nav>
+  <%= yield %>
+  <footer>
+    <hr>
+    <section>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/suppliers">Suppliers</a></li>
+        <li><a href="/add">Add</a></li>
+        <li><a href="/finances">Finances</a></li>
+        <li><a href="/languages">Languages</a></li>
+      </ul>
+    </section>
+    <section>
+      <p>(c) 2017 Finn Porter</p>
+    </section>
+  </footer>
+</body>
+</html>
