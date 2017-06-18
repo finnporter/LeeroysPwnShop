@@ -35,6 +35,14 @@ class Product
     sql = "DELETE FROM products WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
+
+  def which_supplier
+    sql = "SELECT * FROM suppliers WHERE id = #{supplier_id}"
+    results =SqlRunner.run(sql)
+    supplier_data = results[0]
+    supplier = Supplier.new(supplier_data)
+    return supplier
+  end
   
   def self.all
     sql = "SELECT * FROM products"
