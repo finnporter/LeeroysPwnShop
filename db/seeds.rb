@@ -2,6 +2,7 @@ require 'pry-byebug'
 
 require_relative '../models/supplier.rb'
 require_relative '../models/product.rb'
+require_relative '../models/inventory.rb'
 
 Supplier.delete_all
 Product.delete_all
@@ -30,6 +31,7 @@ product_02 = Product.new({
 product_01.save
 product_02.save
 
+inventory = Inventory.new
 
 binding.pry
-nil 
+nil
