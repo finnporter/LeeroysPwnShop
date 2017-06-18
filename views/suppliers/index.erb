@@ -1,1 +1,17 @@
 <h1>Suppliers</h1>
+
+<a href="/suppliers/add">Add Supplier</a>
+
+<table>
+  <tr>
+    <th>Supplier Number</th>
+    <th>Supplier Name</th>
+  </tr>
+  <% for supplier in @suppliers %>
+  <tr>
+    <td><%= supplier.id %></td>
+    <td><a href="/suppliers/:id"><%= supplier.name %></a></td>
+  <% end %>
+  </tr>
+
+</table>

@@ -1,18 +1,26 @@
-<h1>Inventory</h1>
+<h1><%= @supplier.name %></h1>
+
+<!-- if possible turn this table properly vertical when more properties are added -->
+<table>
+  <tr>
+    <th>Supplier Number</th>
+    <td><%= @supplier.id %></td>
+  </tr>
+</table>
+
+<h2>Products by this supplier</h2>
 
 <table>
   <tr>
     <th>Product Number</th>
     <th>Product Name</th>
     <th>Stock</th>
-    <th>Supplier</th>
   </tr>
   <% for product in @products %>
   <tr>
     <td><%= product.id %></td>
     <td><a href="/products/:id"><%= product.name %></a></td>
     <td><%= product.quantity %></td>
-    <td> <a href="/suppliers/:id"><%= product.which_supplier.name %></a></td>
   <% end %>
   </tr>
 </table>
