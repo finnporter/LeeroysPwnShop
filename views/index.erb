@@ -5,5 +5,18 @@
   </section>
   <section>
     <h2>Inventory Overview</h2>
+      <table>
+        <tr>
+          <th>Product Name</th>
+          <th>Items in Stock</th>
+        </tr>
+        <% for product in @products %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.quantity %></td>
+        </tr>
+        <% end %>
+
+      </table>
     <img src="http://via.placeholder.com/350x150" alt="List of items low on stock">
   </section>
