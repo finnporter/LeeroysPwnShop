@@ -15,6 +15,13 @@ get "/suppliers/add" do
   erb(:"/suppliers/add")
 end
 
+#DELETE
+post "/suppliers/:id/delete" do
+  @supplier = Supplier.find(params["id"].to_i)
+  @supplier.delete
+  erb(:"/suppliers/delete")
+end
+
 #SHOW
 get '/suppliers/:id' do
   @supplier = Supplier.find(params["id"].to_i)
