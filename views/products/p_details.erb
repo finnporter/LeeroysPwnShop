@@ -1,6 +1,9 @@
 <h1><%= @product.name %></h1>
 
 <!-- if possible turn this table properly vertical when more properties are added -->
+<form method="post" action="/products/<%= @product.id %>/delete">
+  <input type="submit" value="Delete Product">
+</form>
 
 <table>
   <tr>

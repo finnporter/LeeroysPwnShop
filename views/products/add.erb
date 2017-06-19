@@ -4,9 +4,14 @@
   <label for="name">Name:</label>
   <input id="name" type="text" name="name">
 
+  <label for="quantity">Stock:</label>
+  <input id="quantity" type="number" name="quantity">
+
   <label for="supplier_id">Select a supplier</label>
-  <select name="supplier_id">
-    <option value="5">Select a supplier</option>
+  <select id="supplier_id" name="supplier_id">
+    <% for supplier in @suppliers %>
+    <option value="<%= supplier.id %>"><%= supplier.name %></option>
+    <% end %>
   </select>
 
   <input type="submit" value="Add">

@@ -12,7 +12,15 @@ end
 
 #NEW
 get "/products/add" do
+  @suppliers = Supplier.all
   erb(:"/products/add")
+end
+
+#DELETE
+post "/products/:id/delete" do
+  @product = Product.find(params["id"].to_i)
+  @product.delete
+  erb(:"/products/delete")
 end
 
 #SHOW
