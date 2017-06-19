@@ -10,7 +10,7 @@ class Product
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
     @supplier_id = options['supplier_id'].to_i
   end
 
