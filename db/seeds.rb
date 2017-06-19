@@ -2,7 +2,6 @@ require 'pry-byebug'
 
 require_relative '../models/supplier.rb'
 require_relative '../models/product.rb'
-require_relative '../models/inventory.rb'
 
 Product.delete_all
 Supplier.delete_all
