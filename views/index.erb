@@ -10,7 +10,7 @@
           <th>Product Name</th>
           <th>Items in Stock</th>
         </tr>
-        <% for product in @products %>
+        <% @products.each do |product| %>
         <tr>
           <td><%= product.name %></td>
           <td><%= product.quantity %></td>
