@@ -10,8 +10,20 @@ get '/products' do
   erb(:"products/index")
 end
 
+#NEW
+get "/products/add" do
+  erb(:"/products/add")
+end
+
 #SHOW
 get '/products/:id' do
-  @product = Product.all[params["id"].to_i]
+  @product = Product.find(params["id"].to_i)
   erb(:"products/p_details")
+end
+
+#CREATE
+post "/products" do
+  @products = Product.new(params)
+  @products.save()
+  redirect to("products")
 end

@@ -10,9 +10,9 @@
   <% for product in @products %>
   <tr>
     <td><%= product.id %></td>
-    <td><a href="/products/:id"><%= product.name %></a></td>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><%= product.quantity %></td>
-    <td> <a href="/suppliers/:id"><%= product.which_supplier.name %></a></td>
+    <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
   <% end %>
   </tr>
 </table>

@@ -1,4 +1,5 @@
 <h1><%= @supplier.name %></h1>
+<!-- Why is this not the right name??? -->
 
 <!-- if possible turn this table properly vertical when more properties are added -->
 <table>
@@ -19,8 +20,8 @@
   <% for product in @products %>
   <tr>
     <td><%= product.id %></td>
-    <td><a href="/products/:id"><%= product.name %></a></td>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><%= product.quantity %></td>
-  <% end %>
   </tr>
+  <% end %>
 </table>

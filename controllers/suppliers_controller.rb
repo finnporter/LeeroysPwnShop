@@ -17,8 +17,8 @@ end
 
 #SHOW
 get '/suppliers/:id' do
-  @supplier = Supplier.all[params["id"].to_i]
-  @products = Product.all
+  @supplier = Supplier.find(params["id"].to_i)
+  @products = @supplier.all_products
   erb(:"suppliers/s_details")
 end
 

@@ -20,12 +20,6 @@ class Product
     @id = results.first['id'].to_i
   end
 
-  def find
-    sql = "SELECT * FROM products WHERE id = #{id}"
-    results = SqlRunner.run(sql)
-    return Product.new(results.first)
-  end
-
   def update
     sql = "UPDATE products SET (name, quantity) = ('#{name}', #{quantity}) WHERE id = #{@id}"
     SqlRunner.run(sql)
@@ -53,5 +47,11 @@ class Product
   def self.delete_all
     sql = "DELETE FROM products"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM products WHERE id = #{id}"
+    results = SqlRunner.run(sql)
+    return Product.new(results.first)
   end
 end

@@ -16,12 +16,6 @@ class Supplier
     @id = results.first['id'].to_i
   end
 
-  def find
-    sql = "SELECT * FROM suppliers WHERE id = #{id}"
-    results = SqlRunner.run(sql)
-    return Supplier.new(results.first)
-  end
-
   def update
     sql = "UPDATE suppliers SET (name) = ('#{name}') WHERE id = #{@id}"
     SqlRunner.run(sql)
@@ -47,6 +41,12 @@ class Supplier
   def self.delete_all
     sql = "DELETE FROM suppliers"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM suppliers WHERE id = #{id}"
+    results = SqlRunner.run(sql)
+    return Supplier.new(results.first)
   end
   
 end

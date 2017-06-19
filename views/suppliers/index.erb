@@ -10,7 +10,7 @@
   <% for supplier in @suppliers %>
   <tr>
     <td><%= supplier.id %></td>
-    <td><a href="/suppliers/:id"><%= supplier.name %></a></td>
+    <td><a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></td>
   <% end %>
   </tr>
 
