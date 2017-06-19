@@ -14,6 +14,15 @@
         <tr>
           <td><%= product.name %></td>
           <td><%= product.quantity %></td>
+          <td><% if product.quantity <= 3 %>
+                <img src="/img/ico_red.png">
+              <% elsif product.quantity >= 20 %>
+                <img src="/img/ico_green.png">
+              <% else %>
+                <img src="/img/ico_yellow.png">
+            <% end %>
+          </td>
+          <td><a href="/order">Order more</a></td>
         </tr>
         <% end %>
       </table>
