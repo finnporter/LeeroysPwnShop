@@ -11,6 +11,7 @@ CREATE TABLE suppliers (
 CREATE TABLE products (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
+  category VARCHAR(255),
   quantity INT2,
   buy_price INT2,
   sell_price INT2,
