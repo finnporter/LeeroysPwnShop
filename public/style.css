@@ -1,0 +1,21 @@
+/*Palette*/
+#dad4a6
+#FFD700
+#a1a198
+#d5d8d1
+#eeeeee
+#5c5c51
+
+
+/*tags*/
+/*body, img, div, nav, ul, li, a, footer, hr, section,
+h1, h2, p, table, tr, th, td, form, label, input, select, option*/
+
+html {
+  background-color: #d5d8d1;
+  font-family: Rubik;
+}
+
+h1 {
+  font-family: Oleo Script;
+}
