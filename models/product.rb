@@ -3,7 +3,9 @@ require_relative '../db/SqlRunner'
 class Product
 
   attr_accessor :name,
-                :quantity
+                :quantity,
+                :buy_price,
+                :sell_price
   attr_reader   :id,
                 :supplier_id
 
@@ -11,17 +13,19 @@ class Product
     @id = options['id'].to_i
     @name = options['name']
     @quantity = options['quantity'].to_i
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
     @supplier_id = options['supplier_id'].to_i
   end
 
   def save
-    sql = "INSERT INTO products (name, quantity, supplier_id) VALUES ('#{@name}', #{@quantity}, #{@supplier_id}) RETURNING *;"
+    sql = "INSERT INTO products (name, quantity, buy_price, sell_price, supplier_id) VALUES ('#{@name}', #{@quantity}, #{@buy_price}, #{@sell_price}, #{@supplier_id}) RETURNING *;"
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
 
   def update
-    sql = "UPDATE products SET (name, quantity, supplier_id) = ('#{@name}', #{@quantity}, #{@supplier_id}) WHERE id = #{@id}"
+    sql = "UPDATE products SET (name, quantity, buy_price, sell_price, supplier_id) = ('#{@name}', #{@quantity}, #{@buy_price}, #{@sell_price}, #{@supplier_id}) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

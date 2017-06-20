@@ -12,5 +12,7 @@ CREATE TABLE products (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
   quantity INT2,
+  buy_price INT2,
+  sell_price INT2,
   supplier_id INT8 REFERENCES suppliers(id) ON DELETE CASCADE
 );

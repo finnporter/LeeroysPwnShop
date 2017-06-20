@@ -24,11 +24,15 @@ supplier_02.save
 product_01 = Product.new({
   "name" => "Iron Cleaver",
   "quantity" => 15,
+  "buy_price" => 12,
+  "sell_price" => 23,
   "supplier_id" => supplier_01.id
   })
 product_02 = Product.new({
   "name" => "Searing Blade",
   "quantity" => 8,
+  "buy_price" => 34,
+  "sell_price" => 45,
   "supplier_id" => supplier_02.id
   })
 

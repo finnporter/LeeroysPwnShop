@@ -6,6 +6,12 @@
     <label for="quantity">Stock:</label>
     <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">
 
+    <label for="buy-price">Buy price:</label>
+    <input id="buy-price" type="number" name="buy_price" value="<%= @product.buy_price %>">
+
+    <label for="sell-price">Sell price:</label>
+    <input id="sell-price" type="number" name="sell_price" value="<%= @product.sell_price %>">
+
     <label for="supplier-id">Select a supplier</label>
     <select id="supplier-id" name="supplier_id">
       <% @suppliers.each do |supplier| %>
