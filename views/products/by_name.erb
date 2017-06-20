@@ -6,6 +6,7 @@
   <tr>
     <th>Product Number</th>
     <th>Product Name</th>
+    <th><a href="/products/by_type">Type</a></th>
     <th><a href="/products/by_quantity">Quantity</a></th>
     <th hidden>Colour dot</th>
     <th><a href="/products/by_buy_price">Buy Price</a></th>
@@ -16,6 +17,7 @@
   <tr>
     <td><%= product.id %></td>
     <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.which_type.type %></td>
     <td><%= product.quantity %></td>
     <td><% if product.quantity <= 3 %>
       <img src="/img/ico_red.png">

@@ -8,6 +8,7 @@
   <tr>
     <th>Product Number</th>
     <th>Product Name</th>
+    <th>Type</th>
     <th>Stock</th>
     <th hidden>Colour dot</th>
     <th>Buy Price</th>
@@ -18,6 +19,7 @@
   <tr>
     <td><%= @product.id %></td>
     <td><a href="/products/<%= @product.id %>"><%= @product.name %></a></td>
+    <td><%= @product.which_type.type %></td>
     <td><%= @product.quantity %></td>
     <td><% if @product.quantity <= 3 %>
           <img src="/img/ico_red.png">

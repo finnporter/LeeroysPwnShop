@@ -3,6 +3,14 @@
     <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<%= @product.name %>">
 
+    <label for="type-id">Type</label>
+    <select id="tpye-id" name="tpye_id">
+      <% @types.each do |type| %>
+      <option <%= "selected" if type.id == @product.type_id %>
+        value="<%= type.id %>"><%= type.type %></option>
+      <% end %>
+    </select>
+
     <label for="quantity">Stock:</label>
     <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">
 

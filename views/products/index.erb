@@ -6,16 +6,16 @@
   <tr>
     <th>Product Number</th>
     <th><a href="/products/by_name">Product Name</a></th>
+    <th>Type</th>
     <th><a href="/products/by_quantity">Quantity</a></th>
     <th hidden>Colour dot</th>
-    <th><a href="/products/by_buy_price">Buy Price</a></th>
-    <th><a href="/products/by_sell_price">Sell Price</a></th>
     <th><a href="/products/by_supplier">Supplier</a></th>
   </tr>
   <% for product in @products %>
   <tr>
     <td><%= product.id %></td>
     <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.which_type.type %></td>
     <td><%= product.quantity %></td>
     <td><% if product.quantity <= 3 %>
       <img src="/img/ico_red.png">
@@ -24,8 +24,6 @@
       <% else %>
       <img src="/img/ico_yellow.png">
       <% end %>
-    <td><%= product.buy_price %></td>
-    <td><%= product.sell_price %></td>
     <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
     </td>
     <td><a href="/order">Order more</a></td>

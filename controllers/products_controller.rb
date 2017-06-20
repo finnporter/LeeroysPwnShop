@@ -3,6 +3,7 @@ require 'sinatra/contrib/all'
 
 require_relative '../models/product.rb'
 require_relative '../models/supplier.rb'
+require_relative '../models/type.rb'
 
 #INDEX
 get '/products' do
@@ -14,6 +15,12 @@ end
 get '/products/by_name' do
   @products = Product.all.sort_by { |product| product.name }
   erb(:"products/by_name")
+end
+
+#INDEX SORTED BY TYPE
+get '/products/by_type' do
+  @products = Product.all.sort_by { |product| product.which_type.type }
+  erb(:"products/by_type")
 end
 
 #INDEX SORTED BY QUANTITY
@@ -42,6 +49,7 @@ end
 #NEW
 get "/products/add" do
   @suppliers = Supplier.all
+  @types = Type.all
   erb(:"/products/add")
 end
 
@@ -68,6 +76,7 @@ end
 #EDIT
 get "/products/:id/edit" do
   @suppliers = Supplier.all
+  @types = Type.all
   @product = Product.find(params["id"])
   erb(:"products/edit")
 end
