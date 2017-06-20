@@ -1,14 +1,16 @@
-<form method="post" action="/products/<%= @products.id %>">
+<h1>Edit "<%= @product.name %>"</h1>
+<form method="post" action="/products/<%= @product.id %>">
     <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<%= @products.name %>">
+    <input id="name" type="text" name="name" value="<%= @product.name %>">
 
     <label for="quantity">Stock:</label>
-    <input id="quantity" type="number" name="quantity" value="<%= @products.quantity %>">
+    <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">
 
     <label for="supplier-id">Select a supplier</label>
-    <select id="supplier-id" name="supplier_id" selected="<%= @products.supplier_id %>">
+    <select id="supplier-id" name="supplier_id">
       <% @suppliers.each do |supplier| %>
-      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <option <%= "selected" if supplier.id == @product.supplier_id %>
+         value="<%= supplier.id %>"><%= supplier.name %></option>
       <% end %>
     </select>
 
@@ -16,4 +18,4 @@
 </form>
 
 
-doesn't preselect correct supplier and also doesn't push changes to the db correctly, looks correct in the browser inspector tho
+doesn't preselect correct supplier and also doesn't push changes to the db correctly for suppliers  , plus redirect not working

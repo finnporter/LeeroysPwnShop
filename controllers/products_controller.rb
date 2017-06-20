@@ -56,14 +56,14 @@ end
 
 #EDIT
 get "/products/:id/edit" do
-  @products = Product.find(params["id"].to_i)
   @suppliers = Supplier.all
+  @product = Product.find(params["id"])
   erb(:"products/edit")
 end
 
 #UPDATE
 post "/products/:id" do
-  @products = Product.new(params)
-  @products.update
-  redirect to("products")
+  @product = Product.new(params)
+  @product.update
+  redirect to("products/#{params['id']}")
 end

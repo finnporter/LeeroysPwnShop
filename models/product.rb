@@ -21,7 +21,7 @@ class Product
   end
 
   def update
-    sql = "UPDATE products SET (name, quantity) = ('#{name}', #{quantity}) WHERE id = #{@id}"
+    sql = "UPDATE products SET (name, quantity, supplier_id) = ('#{@name}', #{@quantity}, #{@supplier_id}) WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
