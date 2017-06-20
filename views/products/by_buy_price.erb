@@ -1,0 +1,35 @@
+<h1>Inventory</h1>
+
+<a href="/products/add">Add Product</a>
+
+<table>
+  <tr>
+    <th>Product Number</th>
+    <th><a href="/products/by_name">Product Name</a></th>
+    <th><a href="/products/by_quantity">Quantity</a></th>
+    <th hidden>Colour dot</th>
+    <th>Buy Price</th>
+    <th><a href="/products/by_sell_price">Sell Price</a></th>
+    <th><a href="/products/by_supplier">Supplier</a></th>
+  </tr>
+  <% for product in @products %>
+  <tr>
+    <td><%= product.id %></td>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.quantity %></td>
+    <td><% if product.quantity <= 3 %>
+      <img src="/img/ico_red.png">
+      <% elsif product.quantity >= 20 %>
+      <img src="/img/ico_green.png">
+      <% else %>
+      <img src="/img/ico_yellow.png">
+      <% end %>
+    </td>
+    <td><%= product.buy_price %></td>
+    <td><%= product.sell_price %></td>
+    <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
+    <td><a href="/order">Order more</a></td>
+    <td><a href="/products/<%= product.id %>/edit">Edit Product</a></td>
+    <% end %>
+  </tr>
+</table>

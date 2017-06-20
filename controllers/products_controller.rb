@@ -28,6 +28,17 @@ get '/products/by_supplier' do
   erb(:"products/by_supplier")
 end
 
+#INDEX SORTED BY BUY PRICE
+get '/products/by_buy_price' do
+  @products = Product.all.sort_by { |product| product.buy_price }
+  erb(:"products/by_buy_price")
+end
+#INDEX SORTED BY SELL PRICE
+get '/products/by_sell_price' do
+  @products = Product.all.sort_by { |product| product.sell_price }
+  erb(:"products/by_sell_price")
+end
+
 #NEW
 get "/products/add" do
   @suppliers = Supplier.all
