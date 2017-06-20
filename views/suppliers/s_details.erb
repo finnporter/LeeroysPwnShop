@@ -1,9 +1,15 @@
 <h1><%= @supplier.name %></h1>
 
+<img src="<%= @supplier.picture %>">
+
 <table>
   <tr>
     <th>Supplier Number</th>
+    <th>Location</th>
+  </tr>
+  <tr>
     <td><%= @supplier.id %></td>
+    <td><%= @supplier.location %></td>
   </tr>
 </table>
 

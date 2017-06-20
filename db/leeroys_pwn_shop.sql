@@ -5,7 +5,7 @@ CREATE TABLE suppliers (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
   location VARCHAR(255),
-  location_map VARCHAR(255)
+  picture TEXT
 );
 
 CREATE TABLE products (

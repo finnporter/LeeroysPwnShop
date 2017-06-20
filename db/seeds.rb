@@ -7,10 +7,15 @@ Product.delete_all
 Supplier.delete_all
 
 supplier_01 = Supplier.new({
-  "name" => "Saru Steelfury"
+  "name" => "Saru Steelfury",
+  "location" => "Orgrimmar",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/605541.jpg"
   })
+
 supplier_02 = Supplier.new({
-  "name" => "Lalum Darkmane"
+  "name" => "Lalum Darkmane",
+  "location" => "Mulgore",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/497116.jpg"
   })
 
 supplier_01.save
@@ -29,8 +34,6 @@ product_02 = Product.new({
 
 product_01.save
 product_02.save
-
-inventory = Inventory.new
 
 binding.pry
 nil

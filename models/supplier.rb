@@ -2,24 +2,24 @@ require_relative '../db/SqlRunner'
 
 class Supplier
 
-  attr_accessor :name, :location, :location_map
+  attr_accessor :name, :location, :picture
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
     @location = options['location']
-    @location_map = options['location_map']
+    @picture = options['picture']
   end
   
   def save()
-    sql = "INSERT INTO suppliers (name, location, location_map) VALUES ('#{@name}', '#{location}', '#{location_map}') RETURNING id;"
+    sql = "INSERT INTO suppliers (name, location, picture) VALUES ('#{@name}', '#{@location}', '#{@picture}') RETURNING id;"
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
 
   def update
-    sql = "UPDATE suppliers SET (id, name, location, location_map) = (#{id}, '#{name}', '#{location}', '#{location_map}') WHERE id = #{@id}"
+    sql = "UPDATE suppliers SET (id, name, location, picture) = (#{id}, '#{name}', '#{location}', '#{picture}') WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 
