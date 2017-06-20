@@ -4,13 +4,11 @@
 
 <table>
   <tr>
-    <th>Supplier Number</th>
     <th>Name</th>
     <th>Location</th>
   </tr>
   <% for supplier in @suppliers %>
   <tr>
-    <td><%= supplier.id %></td>
     <td><a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></td>
     <td><%= supplier.location %></td>
     <td><a href="/suppliers/<%= supplier.id %>/edit">Edit Supplier</a></td>

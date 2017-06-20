@@ -4,7 +4,6 @@
 
 <table>
   <tr>
-    <th>Product Number</th>
     <th><a href="/products/by_name">Product Name</a></th>
     <th>Type</th>
     <th><a href="/products/by_quantity">Quantity</a></th>
@@ -15,7 +14,6 @@
   </tr>
   <% for product in @products %>
   <tr>
-    <td><%= product.id %></td>
     <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><%= product.which_type.type %></td>
     <td><%= product.quantity %></td>

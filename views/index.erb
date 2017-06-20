@@ -1,29 +1,42 @@
 <h1>Overview</h1>
-  <section>
-    <h2>Financial Overview</h2>
-      <img src="http://via.placeholder.com/350x150" alt="chart with details of financial data">
-  </section>
-  <section>
-    <h2>Inventory Overview</h2>
-      <table>
-        <tr>
-          <th>Product Name</th>
-          <th>Items in Stock</th>
-        </tr>
-        <% @products.each do |product| %>
-        <tr>
-          <td><%= product.name %></td>
-          <td><%= product.quantity %></td>
-          <td><% if product.quantity <= 3 %>
-                <img src="/img/ico_red.png">
-              <% elsif product.quantity >= 20 %>
-                <img src="/img/ico_green.png">
-              <% else %>
-                <img src="/img/ico_yellow.png">
-            <% end %>
-          </td>
-          <td><a href="/order">Order more</a></td>
-        </tr>
+<section>
+  <h2>Financial Overview</h2>
+  <table>
+    <tr>
+      <th>Total Income:</th>
+      <td> 23, 532 Gold</td>
+    </tr>    
+    <tr>
+      <th>Total Spending:</th>
+      <td>16, 234 Gold</td>
+    </tr>
+    <tr>
+      <th>Total Earnings:</th>
+      <td>7, 298 Gold</td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2>Inventory Overview</h2>
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Items in Stock</th>
+    </tr>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.quantity %></td>
+      <td><% if product.quantity <= 3 %>
+        <img src="/img/ico_red.png">
+        <% elsif product.quantity >= 20 %>
+        <img src="/img/ico_green.png">
+        <% else %>
+        <img src="/img/ico_yellow.png">
         <% end %>
-      </table>
-  </section>
+      </td>
+      <td><a href="/order">Order more</a></td>
+    </tr>
+    <% end %>
+  </table>
+</section>

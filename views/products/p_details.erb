@@ -1,12 +1,13 @@
 <h1><%= @product.name %></h1>
 
+<img src="<%= @product.picture %>">
+
 <form method="post" action="/products/<%= @product.id %>/delete">
   <input type="submit" value="Delete Product">
 </form>
 
 <table>
   <tr>
-    <th>Product Number</th>
     <th>Product Name</th>
     <th>Type</th>
     <th>Stock</th>
@@ -17,7 +18,6 @@
     <th>Supplier</th>
   </tr>
   <tr>
-    <td><%= @product.id %></td>
     <td><a href="/products/<%= @product.id %>"><%= @product.name %></a></td>
     <td><%= @product.which_type.type %></td>
     <td><%= @product.quantity %></td>

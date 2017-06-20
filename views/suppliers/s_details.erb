@@ -22,7 +22,6 @@
 
 <table>
   <tr>
-    <th>Product Number</th>
     <th>Product Name</th>
     <th>Stock</th>
     <th hidden>Colour dot</th>
@@ -31,7 +30,6 @@
   </tr>
   <% for product in @products %>
   <tr>
-    <td><%= product.id %></td>
     <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><%= product.quantity %></td>
     <td><% if product.quantity <= 3 %>
@@ -42,8 +40,8 @@
           <img src="/img/ico_yellow.png">
       <% end %>
     </td>
-    <td><%= product.buy_price %></td>
-    <td><%= product.sell_price %></td>
+    <td><%= product.buy_price %> Gold</td>
+    <td><%= product.sell_price %> Gold</td>
     <td><a href="/order">Order more</a></td>
   </tr>
   <% end %>

@@ -21,6 +21,7 @@ CREATE TABLE products (
   quantity INT2,
   buy_price INT2,
   sell_price INT2,
+  picture TEXT,
   supplier_id INT8 REFERENCES suppliers(id) ON DELETE CASCADE,
   type_id INT8 REFERENCES types(id) ON DELETE CASCADE
 );

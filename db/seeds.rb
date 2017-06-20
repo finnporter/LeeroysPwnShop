@@ -56,6 +56,7 @@ product_01 = Product.new({
   "type_id" => type_01.id,
   "buy_price" => 12,
   "sell_price" => 23,
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/99128.jpg",
   "supplier_id" => supplier_01.id
   })
 product_02 = Product.new({
@@ -64,6 +65,7 @@ product_02 = Product.new({
   "type_id" => type_01.id, 
   "buy_price" => 34,
   "sell_price" => 45,
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/394916.jpg",
   "supplier_id" => supplier_02.id
   })
 
