@@ -35,3 +35,16 @@ post "/suppliers" do
   @supplier.save()
   redirect to("suppliers")
 end
+
+#EDIT
+get "/suppliers/:id/edit" do
+  @supplier = Supplier.find(params["id"])
+  erb(:"suppliers/edit")
+end
+
+#UPDATE
+post "/suppliers/:id" do
+  @supplier = Supplier.new(params)
+  @supplier.update
+  redirect to("suppliers/#{params['id']}")
+end

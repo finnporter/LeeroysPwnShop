@@ -1,0 +1,7 @@
+<h1>Edit "<%= @supplier.name %>"</h1>
+<form method="post" action="/suppliers/<%= @supplier.id %>">
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<%= @supplier.name %>">
+
+  <input type="submit" value="Update Supplier">
+</form>

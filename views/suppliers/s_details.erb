@@ -1,7 +1,5 @@
 <h1><%= @supplier.name %></h1>
-<!-- Why is this not the right name??? -->
 
-<!-- if possible turn this table properly vertical when more properties are added -->
 <table>
   <tr>
     <th>Supplier Number</th>
@@ -9,6 +7,7 @@
   </tr>
 </table>
 
+<a href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier</a>
 <form method="post" action="/suppliers/<%= @supplier.id %>/delete">
   <input type="submit" value="Delete Supplier">
 </form>

@@ -3,7 +3,9 @@ DROP TABLE IF EXISTS suppliers;
 
 CREATE TABLE suppliers (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255) not null
+  name VARCHAR(255) not null,
+  location VARCHAR(255),
+  location_map VARCHAR(255)
 );
 
 CREATE TABLE products (
