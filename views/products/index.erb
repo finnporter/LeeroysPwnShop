@@ -3,25 +3,29 @@
 <div class="table-div">
 <table>
   <tr>
-    <th class="default-td td-center"><a href="/products/by_name">Product Name</a></th>
-    <th class="default-td td-center"><a href="/products/by_type">Type</a></th>
-    <th class="default-td td-center"><a href="/products/by_quantity">Quantity</a></th>
+    <th class="td-center"><a href="/products/by_name">Product Name</a></th>
+    <th class="td-center"><a href="/products/by_type">Type</a></th>
+    <th class="td-center"><a href="/products/by_quantity">Quantity</a></th>
     <th></th>
-    <th class="default-td td-center"><a href="/products/by_supplier">Supplier</a></th>
+    <th><a class="td-center" href="/products/by_buy_price">Buy Price</a></th>
+    <th><a class="td-center" href="/products/by_sell_price">Sell Price</a></th>
+    <th class="td-center"><a href="/products/by_supplier">Supplier</a></th>
   </tr>
   <% for product in @products %>
   <tr>
-    <td class="default-td"><a href="/products/<%= product.id %>"><%= product.name %></a></td>
-    <td class="default-td"><%= product.which_type.type %></td>
-    <td class="default-td td-center"><%= product.quantity %></td>
-    <td class="default-td dot"><% if product.quantity <= 3 %>
+    <td ><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td><%= product.which_type.type %></td>
+    <td><%= product.quantity %></td>
+    <td class="dot"><% if product.quantity <= 3 %>
       <img src="/img/ico_red.png">
       <% elsif product.quantity >= 20 %>
       <img src="/img/ico_green.png">
       <% else %>
       <img src="/img/ico_yellow.png">
       <% end %>
-    <td class="default-td"> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
+      <td class="td-center"><%= product.buy_price %></td>
+      <td class="td-center"><%= product.sell_price %></td>
+    <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
     </td>
     <td><a class="link-to-button" href="/order">Order more</a></td>
     <td><a class="link-to-button" href="/products/<%= product.id %>/edit">Edit Product</a></td>

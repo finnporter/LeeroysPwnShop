@@ -178,7 +178,7 @@ product_08 = Product.new({
 
 product_09 = Product.new({
   "name" => "Ebonchill",
-  "quantity" => 3,
+  "quantity" => 0,
   "type_id" => type_05.id,
   "buy_price" => 934,
   "sell_price" => 999,
@@ -254,7 +254,6 @@ product_04.save
 product_05.save
 product_06.save
 product_07.save
-product_08.save
 product_08.save
 product_09.save
 product_10.save

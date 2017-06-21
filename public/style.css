@@ -26,12 +26,15 @@ h1 {
   margin-left: 450px;
   margin-top: 75px;
   display: inline-block;
-  width: 100%;
   position: initial;
 }
 
 h2 {
   font-family: Oleo Script;
+}
+
+#supplier-h2 {
+  padding: 20px 0 0 0;
 }
 
 img#logo {
@@ -44,11 +47,11 @@ img#logo {
   position: absolute; 
 }
 
-div#overview {
+.overview {
   display: flex;
 }
 
-section#financial-overview {
+.financial-overview {
   float: left;
   margin: 60px 60px 0px 35px;
   padding-left: 40px;
@@ -68,6 +71,19 @@ section#inventory-overview {
   max-width: 500px;
   background-color: #ffbf37; 
   border-radius: 10px; 
+}
+
+.profile {
+  float: right;
+  border: 2px solid #d5d8d1;
+  display: inline-block;
+  max-width: 400px;
+  max-height: 200px;
+  margin: 40px 20px 0px 0;
+}
+
+#supplier-details {
+  margin-left: 42px;
 }
 
 /*navigation*/
@@ -157,7 +173,7 @@ a {
 }
 
 a:hover {
-  color: #3e3e3e;
+  color: #a1a198;
 }
 
 
@@ -178,8 +194,11 @@ a:hover {
 th {
   text-align: center;
   font-weight: 700;
-  padding: 2px;
   text-decoration: none;
+  height: 30px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 6px;
 }
 
 .td-center {
@@ -191,11 +210,12 @@ th {
   padding-bottom: 20px;
   background-color: #ffbf37; 
   border-radius: 10px; 
-  max-width: 70%;
+  max-width: 85%;
   margin: 0 auto;
+  clear: right;
 }
 
-.default-td {
+td {
   height: 30px;
   padding-left: 6px;
   padding-right: 6px;
@@ -204,11 +224,43 @@ th {
 /*buttons*/
 .link-to-button {
   color: #d5d8d1;
-  background-color: #9f9f9f;
+  background-color: #414244;
   padding: 4px 4px 6px 4px;
   text-decoration: none;
-  border: 1px solid #a1a198;
+}
+
+.link-to-button:hover {
+  color: #eee;
+}
+
+#supplier-edit {
+  float: right;
+  clear: right;
+  display: inline-block;
+  margin: 2px 20px 0px 0;
+}
+
+input[type=submit] {
+  float: right;
+  clear: right;
+  display: inline-block;
+  margin: 2px 20px 20px 0;
+  color: #d5d8d1;
+  background-color: #414244;
+  border: none;
+  padding: 4px 4px 6px 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
 }
 
 
 /*forms*/
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #202020;
+    background-color: #8c8c85;
+    height: 30px;
+}

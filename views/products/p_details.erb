@@ -1,17 +1,17 @@
 <h1><%= @product.name %></h1>
 
-<img src="<%= @product.picture %>">
+<img class="profile" src="<%= @product.picture %>">
 
-<form method="post" action="/products/<%= @product.id %>/delete">
+<form class="button" method="post" action="/products/<%= @product.id %>/delete">
   <input type="submit" value="Delete Product">
 </form>
-
+<div class="table-div">
 <table>
   <tr>
     <th>Product Name</th>
     <th>Type</th>
     <th>Stock</th>
-    <th hidden>Colour dot</th>
+    <th></th>
     <th>Buy Price</th>
     <th>Sell Price</th>
     <th>Markup in %</th>
@@ -33,7 +33,8 @@
     <td class="td-center"><%= @product.sell_price %></td>
     <td class="td-center"><%= @product.calculate_markup %></td>
     <td> <a href="/suppliers/<%= @product.id %>"><%= @product.which_supplier.name %></a></td>
-    <td><a href="/order">Order more</a></td>
-    <td><a href="/products/<%= @product.id %>/edit">Edit Product</a></td>
+    <td><a class="link-to-button" href="/order">Order more</a></td>
+    <td><a class="link-to-button" href="/products/<%= @product.id %>/edit">Edit Product</a></td>
   </tr>
 </table>
+</div>

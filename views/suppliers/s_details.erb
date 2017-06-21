@@ -1,26 +1,31 @@
 <h1><%= @supplier.name %></h1>
 
-<img src="<%= @supplier.picture %>">
-
+<img class="profile" src="<%= @supplier.picture %>">
+<div class="overview" id="supplier-details">
+<section class="financial-overview">
 <table>
   <tr>
-    <th>Location:</th>
-    <td><%= @supplier.location %></td>
+    <th class="fin-left">Location:</th>
+    <td class="fin-right"><%= @supplier.location %></td>
   </tr>
 </table>
+</section>
+</div>
 
-<a href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier</a>
+<a class="link-to-button" id="supplier-edit" href="/suppliers/<%= @supplier.id %>/edit">Edit Supplier</a>
 <form method="post" action="/suppliers/<%= @supplier.id %>/delete">
   <input type="submit" value="Delete Supplier">
 </form>
 
-<h2>Products by this supplier</h2>
 
+
+<div class="table-div">
+<h2 id="supplier-h2">Products by this supplier</h2>
 <table>
   <tr>
     <th>Product Name</th>
     <th>Stock</th>
-    <th hidden>Colour dot</th>
+    <th></th>
     <th>Buy Price</th>
     <th>Sell Price</th>
   </tr>
@@ -38,7 +43,8 @@
     </td>
     <td class="td-center"><%= product.buy_price %> Gold</td>
     <td class="td-center"><%= product.sell_price %> Gold</td>
-    <td><a href="/order">Order more</a></td>
+    <td><a class="link-to-button" href="/order">Order more</a></td>
   </tr>
   <% end %>
 </table>
+</div>
