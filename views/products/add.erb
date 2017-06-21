@@ -1,33 +1,43 @@
 <h1>Add another product</h1>
 
-<form method="post" action="/products">
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name">
-
-  <label for="type-id">Type</label>
-  <select id="type-id" name="type_id">
-    <% for type in @types %>
-    <option value="<%= type.id %>"><%= type.type %></option>
-    <% end %>
-  </select>
-
-  <label for="quantity">Stock:</label>
-  <input id="quantity" type="number" name="quantity">
-
-  <label for="buy-price">Buy Price:</label>
-  <input id="buy-price" type="number" name="buy_price">
-
-  <label for="sell-price">Sell Price:</label>
-  <input id="sell-price" type="number" name="sell_price">
-
-  <label for="supplier_id">Select a supplier</label>
-  <select id="supplier_id" name="supplier_id">
-    <% for supplier in @suppliers %>
-    <option value="<%= supplier.id %>"><%= supplier.name %></option>
-    <% end %>
-  </select>
-    <label for "picture"> Picture:</label>
-    <input id="picture" type="text" name="picture">
-
-  <input type="submit" value="Add">
-</form>
+<div class="table-div">
+  <form class="form-div" method="post" action="/products">
+    <div class="in-form-div">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name">
+    </div>
+    <div class="in-form-div">
+      <label for="type-id">Type</label>
+      <select id="type-id" name="type_id">
+        <% for type in @types %>
+        <option value="<%= type.id %>"><%= type.type %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="in-form-div">
+      <label for="quantity">Stock:</label>
+      <input id="quantity" type="number" name="quantity">
+    </div>
+    <div class="in-form-div">
+      <label for="buy-price">Buy Price:</label>
+      <input id="buy-price" type="number" name="buy_price">
+    </div>
+    <div class="in-form-div">
+      <label for="sell-price">Sell Price:</label>
+      <input id="sell-price" type="number" name="sell_price">
+    </div>
+    <div class="in-form-div">
+      <label for="supplier_id">Select a supplier</label>
+      <select id="supplier_id" name="supplier_id">
+        <% for supplier in @suppliers %>
+        <option value="<%= supplier.id %>"><%= supplier.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="in-form-div">
+      <label for "picture"> Picture:</label>
+      <input id="picture" type="text" name="picture">
+    </div>
+    <input class="form-button in-forms" type="submit" value="Add">
+  </form>
+</div>

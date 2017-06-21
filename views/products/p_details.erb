@@ -18,7 +18,7 @@
     <th>Supplier</th>
   </tr>
   <tr>
-    <td><a href="/products/<%= @product.id %>"><%= @product.name %></a></td>
+    <td><%= @product.name %></td>
     <td><%= @product.which_type.type %></td>
     <td class="td-center"><%= @product.quantity %></td>
     <td class="dot"><% if @product.quantity <= 3 %>

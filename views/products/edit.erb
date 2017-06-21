@@ -1,34 +1,45 @@
 <h1>Edit "<%= @product.name %>"</h1>
-<form method="post" action="/products/<%= @product.id %>">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<%= @product.name %>">
+<div class="table-div">
+  <form class="form-div" method="post" action="/products/<%= @product.id %>">
+    <div class="in-form-div">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" value="<%= @product.name %>">
+    </div>
+    <div class="in-form-div">
+      <label for="type-id">Type:</label>
+      <select id="type-id" name="type_id">
+        <% @types.each do |type| %>
+        <option <%= "selected" if type.id == @product.type_id %>
+          value="<%= type.id %>"><%= type.type %></option>
+          <% end %>
+        </select>
+      </div>
+      <div class="in-form-div">
 
-    <label for="type-id">Type</label>
-    <select id="type-id" name="type_id">
-      <% @types.each do |type| %>
-      <option <%= "selected" if type.id == @product.type_id %>
-        value="<%= type.id %>"><%= type.type %></option>
-      <% end %>
-    </select>
-
-    <label for="quantity">Stock:</label>
-    <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">
-
-    <label for="buy-price">Buy price:</label>
-    <input id="buy-price" type="number" name="buy_price" value="<%= @product.buy_price %>">
-
-    <label for="sell-price">Sell price:</label>
-    <input id="sell-price" type="number" name="sell_price" value="<%= @product.sell_price %>">
-
-    <label for="supplier-id">Select a supplier</label>
-    <select id="supplier-id" name="supplier_id">
-      <% @suppliers.each do |supplier| %>
-      <option <%= "selected" if supplier.id == @product.supplier_id %>
-         value="<%= supplier.id %>"><%= supplier.name %></option>
-      <% end %>
-    </select>
-      <label for "picture"> Picture:</label>
-      <input id="picture" type="text" name="picture" value="<%= @product.picture %>">
-
-  <input type="submit" value="Update Product">
-</form>
+        <label for="quantity">Stock:</label>
+        <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">
+      </div>
+      <div class="in-form-div">
+        <label for="buy-price">Buy price:</label>
+        <input id="buy-price" type="number" name="buy_price" value="<%= @product.buy_price %>">
+      </div>
+      <div class="in-form-div">
+        <label for="sell-price">Sell price:</label>
+        <input id="sell-price" type="number" name="sell_price" value="<%= @product.sell_price %>">
+      </div>
+      <div class="in-form-div">
+        <label for="supplier-id">Select a supplier</label>
+        <select id="supplier-id" name="supplier_id">
+          <% @suppliers.each do |supplier| %>
+          <option <%= "selected" if supplier.id == @product.supplier_id %>
+           value="<%= supplier.id %>"><%= supplier.name %></option>
+           <% end %>
+         </select>
+       </div>
+       <div class="in-form-div">
+        <label for "picture"> Picture:</label>
+        <input id="picture" type="text" name="picture" value="<%= @product.picture %>">
+      </div>
+      <input class="form-button in-forms" type="submit" value="Update Product">
+    </form>
+  </div>

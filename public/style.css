@@ -256,11 +256,36 @@ input[type=submit] {
 }
 
 
+
+
 /*forms*/
+
+label {
+  margin: 20px 0px 5px 0px;
+  display: inline-block;
+  font-weight: 700;
+}
 
 input[type=text] {
     border: none;
     border-bottom: 2px solid #202020;
-    background-color: #8c8c85;
-    height: 30px;
+    background-color: #ffbf37;
+    font-size: 16px;
+    color: #414244;
+    display: inline-block;
+}
+
+input[type=number] {
+  border: none;
+  border-bottom: 2px solid #202020;
+  background-color: #ffbf37;
+  display: block;
+  font-size: 16px;
+  color: #414244;
+}
+
+.form-div {
+  margin: 30px 0 60px 85px;
+  max-height: 100%;
+  padding: 12px 20px;
 }

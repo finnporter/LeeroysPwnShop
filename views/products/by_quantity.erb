@@ -26,8 +26,8 @@
     <td class="td-center"><%= product.buy_price %></td>
     <td class="td-center"><%= product.sell_price %></td>
     <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
-    <td><a href="/order">Order more</a></td>
-    <td><a href="/products/<%= product.id %>/edit">Edit Product</a></td>
+    <td><a class="link-to-button" href="/order">Order more</a></td>
+    <td><a class="link-to-button" href="/products/<%= product.id %>/edit">Edit Product</a></td>
     <% end %>
   </tr>
 </table>

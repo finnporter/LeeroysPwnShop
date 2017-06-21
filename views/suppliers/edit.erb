@@ -1,15 +1,18 @@
 <h1>Edit "<%= @supplier.name %>"</h1>
-<div>
-<form method="post" action="/suppliers/<%= @supplier.id %>">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<%= @supplier.name %>">
-
-    <label for="location">Location:</label>
-    <input id="location" type="text" name="location" value="<%= @supplier.location %>">
-
-    <label for "picture"> Profile picture:</label>
-    <input id="picture" type="text" name="picture" value="<%= @supplier.picture %>">
-
-  <input type="submit" value="Update Supplier">
-</form>
+<div class="table-div">
+  <form class="form-div" method="post" action="/suppliers/<%= @supplier.id %>">
+    <div class="in-form-div">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" value="<%= @supplier.name %>">
+    </div>
+    <div class="in-form-div">
+      <label for="location">Location:</label>
+      <input id="location" type="text" name="location" value="<%= @supplier.location %>">
+    </div>
+    <div class="in-form-div">
+      <label for "picture"> Profile picture:</label>
+      <input id="picture" type="text" name="picture" value="<%= @supplier.picture %>">
+    </div>
+    <input class="form-button in-forms" type="submit" value="Update Supplier">
+  </form>
 </div>
