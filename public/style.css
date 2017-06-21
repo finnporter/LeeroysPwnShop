@@ -1,12 +1,12 @@
-Palette*/
 /*
+Palette
 #dad4a6
 #FFD700
 #ffbf37
 #a1a198
 #d5d8d1
 #eeeeee
-#5c5c51
+#8c8c85
 */
 
 /*tags*/
@@ -15,7 +15,7 @@ h1, h2, p, table, tr, th, td, form, label, input, select, option*/
 
 
 body {
-  background-color: #5c5c51;
+  background-color: #8c8c85;
   color: #202020;
   font-family: Rubik;
 }
@@ -23,7 +23,7 @@ body {
 h1 {
   font-family: Oleo Script;
   margin-left: 450px;
-  margin-top: 100px;
+  margin-top: 75px;
   display: inline-block;
   float: center;
   width: 100%;
@@ -44,17 +44,30 @@ img#logo {
   position: absolute; 
 }
 
+div#overview {
+  display: flex;
+}
+
 section#financial-overview {
-  display: block;
   float: left;
-  width: 50% ;
-  clear: both;
-  /*margin: 40px;*/
+  margin: 60px 60px 0px 35px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  flex: 1;
+  max-width: 300px;
+  background-color: #ffbf37; 
+  border-radius: 10px; 
 }
 
 section#inventory-overview {
   float: right;
-  width: 50%;
+  flex: 1;
+  margin: 60px 60px 0px 35px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  max-width: 300px;
+  background-color: #ffbf37; 
+  border-radius: 10px; 
 }
 
 /*navigation*/
@@ -79,9 +92,8 @@ nav ul {
 } 
 
 nav ul li {
-  display: inline;
+  display: inline-block;
   margin: 15px 0px 15px 1px;
-  /*padding: 5px;*/
 }
 
 
@@ -94,13 +106,13 @@ nav ul li {
 }
 
 #inactive-nav:hover {
-  background-color: #d5d8d1;
+  background-color: #8c8c85;
 }
 
 nav ul li a {
-  color: #5c5c51;
+  color: #7c7c73;
   background-color: #d5d8d1;
-  padding: 5px;
+  padding: 8px;
   text-decoration: none;
 }
 
@@ -109,14 +121,45 @@ nav ul li a:hover {
 }
 
 nav ul li a:visited {
-  color: #5c5c51;
+  color: #202020;
 }
 
 nav ul li a:active {
   background-color: #dad4a6;
 }
 
+/*tables*/
+th.fin-left {
+  text-align: left;
+  padding: 10px;
+}
+
+td.fin-right {
+  text-align: right;
+}
+
+.inv-overview {
+  border: 1px solid #d5d8d1;
+  border-collapse: collapse;
+  height: 25px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.dot {
+  margin: 4px;
+}
+
+/*.no-border {
+  border: 0px;
+}*/
+
+th {
+  text-align: center;
+  font-weight: 700;
+  padding: 2px;
+  
+}
+
 
 /*forms*/
-
-/*tables
