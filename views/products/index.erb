@@ -1,31 +1,31 @@
 <h1>Inventory</h1>
 
-<a href="/products/add">Add Product</a>
-
+<div class="table-div">
 <table>
   <tr>
-    <th><a href="/products/by_name">Product Name</a></th>
-    <th><a href="/products/by_type">Type</a></th>
-    <th><a href="/products/by_quantity">Quantity</a></th>
-    <th hidden>Colour dot</th>
-    <th><a href="/products/by_supplier">Supplier</a></th>
+    <th class="inv-overview td-center"><a href="/products/by_name">Product Name</a></th>
+    <th class="inv-overview td-center"><a href="/products/by_type">Type</a></th>
+    <th class="inv-overview td-center"><a href="/products/by_quantity">Quantity</a></th>
+    <th></th>
+    <th class="inv-overview td-center"><a href="/products/by_supplier">Supplier</a></th>
   </tr>
   <% for product in @products %>
   <tr>
-    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
-    <td><%= product.which_type.type %></td>
-    <td><%= product.quantity %></td>
-    <td><% if product.quantity <= 3 %>
+    <td class="inv-overview"><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+    <td class="inv-overview"><%= product.which_type.type %></td>
+    <td class="inv-overview td-center"><%= product.quantity %></td>
+    <td class="inv-overview"><% if product.quantity <= 3 %>
       <img src="/img/ico_red.png">
       <% elsif product.quantity >= 20 %>
       <img src="/img/ico_green.png">
       <% else %>
       <img src="/img/ico_yellow.png">
       <% end %>
-    <td> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
+    <td class="inv-overview"> <a href="/suppliers/<%= product.supplier_id %>"><%= product.which_supplier.name %></a></td>
     </td>
-    <td><a href="/order">Order more</a></td>
-    <td><a href="/products/<%= product.id %>/edit">Edit Product</a></td>
+    <td><a class="link-to-button" href="/order">Order more</a></td>
+    <td><a class="link-to-button" href="/products/<%= product.id %>/edit">Edit Product</a></td>
     <% end %>
   </tr>
 </table>
+</div>

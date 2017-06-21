@@ -1,46 +1,47 @@
 <h1>Overview</h1>
 <div id="overview">
-<section id="financial-overview">
-  <h2>Financial Overview</h2>
-  <table>
-    <tr>
-      <th class="fin-left">Total Income:</th>
-      <td class="fin-right"> 23, 532 Gold</td>
-    </tr>    
-    <tr>
-      <th class="fin-left">Total Spending:</th>
-      <td class="fin-right">16, 234 Gold</td>
-    </tr>
-    <tr>
-      <th class="fin-left">Total Earnings:</th>
-      <td class="fin-right">7, 298 Gold</td>
-    </tr>
-  </table>
-</section>
-<section id="inventory-overview">
-  <h2>Inventory Overview</h2>
-  <table class="inv-overview">
-    <tr>
-      <th class="inv-overview">Product Name</th>
-      <th class="inv-overview">Items in Stock</th>
-      <th class="inv-overview"></th>
-      <th class="inv-overview">Order</th>
-    </tr>
-    <% @products.each do |product| %>
-    <tr>
-      <td class="inv-overview"><%= product.name %></td>
-      <td class="inv-overview"><%= product.quantity %></td>
-      <td class="inv-overview"><% if product.quantity <= 3 %>
-        <img class="dot" src="/img/ico_red.png">
-        <% elsif product.quantity >= 20 %>
-        <img class="dot" src="/img/ico_green.png">
-        <% else %>
-        <img class="dot" src="/img/ico_yellow.png">
-        <% end %>
-      </td>
-      <td class="inv-overview"><a href="/order">Order more</a></td>
-    </tr>
-    <% end %>
-  </table>
-</section>
+  <section id="financial-overview">
+    <h2>Financial Overview</h2>
+    <table>
+      <tr>
+        <th class="fin-left">Total Income:</th>
+        <td class="fin-right"> 23, 532 Gold</td>
+      </tr>    
+      <tr>
+        <th class="fin-left">Total Spending:</th>
+        <td class="fin-right">16, 234 Gold</td>
+      </tr>
+      <tr>
+        <th class="fin-left">Total Earnings:</th>
+        <td class="fin-right">7, 298 Gold</td>
+      </tr>
+    </table>
+  </section>
+  <section id="inventory-overview">
+    <h2>Inventory Overview</h2>
+    <table class="inv-overview">
+      <tr>
+        <th class="inv-overview">Product Name</th>
+        <th class="inv-overview">Items in Stock</th>
+        <th class="inv-overview"></th>
+        <th class="inv-overview">Order</th>
+      </tr>
+      <% @products.each do |product| %>
+      <tr>
+        <td class="inv-overview"><%= product.name %></td>
+        <td class="inv-overview td-center"><%= product.quantity %></td>
+        <td class="inv-overview">
+          <% if product.quantity <= 5 %>
+          <img class="dot" src="/img/ico_red.png">
+          <% elsif product.quantity >= 20 %>
+          <img class="dot" src="/img/ico_green.png">
+          <% else %>
+          <img class="dot" src="/img/ico_yellow.png">
+          <% end %>
+        </td>
+        <td class="inv-overview"><a class="link-to-button" href="/order">Order more</a></td>
+      </tr>
+      <% end %>
+    </table>
+  </section>
 </div>

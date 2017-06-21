@@ -65,15 +65,12 @@ section#inventory-overview {
   margin: 60px 60px 0px 35px;
   padding-left: 40px;
   padding-bottom: 20px;
-  max-width: 445px;
+  max-width: 500px;
   background-color: #ffbf37; 
   border-radius: 10px; 
 }
 
 /*navigation*/
-
-NAV NACH GANZ OBEN SOMEHOW
-
 div#main-nav {
   position: absolute;
 }
@@ -96,16 +93,45 @@ nav ul li {
   margin: 15px 0px 15px 1px;
 }
 
+hr {
+  border-color: #d5d8d1;
+  max-width: 90%;
+  margin-top: 30px;
+}
 
+/*footer*/
 
+footer section {
+  float: left;
+}
+
+footer section ul {
+  margin: 5px;
+  text-decoration: none;
+}
+
+footer section ul li {
+  display: inline-block;
+  margin: 15px 5px 15px 1px;
+}
+
+.grey-text {
+  color: #d5d8d1;
+  text-decoration: none;
+}
+
+#copyright {
+  float: right;
+  margin-right: 30px;
+}
 
 
 /*links*/
-#inactive-nav {
+.inactive-nav {
   color: #999;
 }
 
-#inactive-nav:hover {
+.inactive-nav:hover {
   background-color: #8c8c85;
 }
 
@@ -139,8 +165,6 @@ td.fin-right {
 }
 
 .inv-overview {
-  border: 1px solid #d5d8d1;
-  border-collapse: collapse;
   height: 30px;
   padding-left: 6px;
   padding-right: 6px;
@@ -150,15 +174,15 @@ td.fin-right {
   margin: 4px;
 }
 
-/*.no-border {
-  border: 0px;
-}*/
-
 th {
   text-align: center;
   font-weight: 700;
   padding: 2px;
-  
+  text-decoration: none;
+}
+
+.td-center {
+  text-align: center;
 }
 
 .table-div {
@@ -166,7 +190,17 @@ th {
   padding-bottom: 20px;
   background-color: #ffbf37; 
   border-radius: 10px; 
-  max-width: ;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/*buttons*/
+.link-to-button {
+  color: #d5d8d1;
+  background-color: #9f9f9f;
+  padding: 4px 4px 6px 4px;
+  text-decoration: none;
+  border: 1px solid #ffbf37;
 }
 
 
