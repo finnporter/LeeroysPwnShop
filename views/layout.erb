@@ -5,26 +5,29 @@
   <meta name="author" content="Finn Porter">
   <link rel="shortcut icon" type="image/png" href="/img/favicon_sword_48.png"/>
   <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Rubik" rel="stylesheet">
-  <link rel=“stylesheet” type=“text/css” href=“/style.css”>
+  <link rel="stylesheet" type="text/css" href="/style.css">
   <title>Leeroy's Pwn Shop</title>
 </head>
 <body>
-  <img src="/img/logo.jpg" alt="logo">
+  <img id="logo" src="/img/logo.jpg" alt="logo">
+  
   <div>
-    <nav>
+    <nav id="main-nav">
       <ul>
         <li><a href="/">Overview</a></li>
         <li><a href="/products">Inventory</a></li>
         <li><a href="/suppliers">Suppliers</a></li>
         <li><a href="/suppliers/add">Add Supplier</a></li>
         <li><a href="/products/add">Add Product</a></li>
-        <li><a href="/finances">Finances</a></li>
-        <li><a href="/languages">Languages</a></li>
+        <li><a id="inactive-nav" href="/finances">Finances</a></li>
+        <li><a id="inactive-nav" href="/languages">Languages</a></li>
       </ul>
     </nav>
   </div>
+  <div>
   <%= yield %>
-  <footer>
+  </div>
+  <!-- <footer>
     <hr>
     <section>
       <ul>
@@ -40,6 +43,6 @@
     <section>
       <p>(c) 2017 Finn Porter</p>
     </section>
-  </footer>
+  </footer> -->
 </body>
 </html>

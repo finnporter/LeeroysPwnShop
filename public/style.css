@@ -1,21 +1,122 @@
-/*Palette*/
+Palette*/
+/*
 #dad4a6
 #FFD700
+#ffbf37
 #a1a198
 #d5d8d1
 #eeeeee
 #5c5c51
-
+*/
 
 /*tags*/
 /*body, img, div, nav, ul, li, a, footer, hr, section,
 h1, h2, p, table, tr, th, td, form, label, input, select, option*/
 
-html {
-  background-color: #d5d8d1;
+
+body {
+  background-color: #5c5c51;
+  color: #202020;
   font-family: Rubik;
 }
 
 h1 {
   font-family: Oleo Script;
+  margin-left: 450px;
+  margin-top: 100px;
+  display: inline-block;
+  float: center;
+  width: 100%;
+  position: initial;
 }
+
+h2 {
+  font-family: Oleo Script;
+}
+
+img#logo {
+  border-radius: 75px;
+  border: 1px solid #ffbf37;
+  max-width: 350px;
+  margin: 20px 20px 20px 20px;
+  float: left;
+  clear: right;
+  position: absolute; 
+}
+
+section#financial-overview {
+  display: block;
+  float: left;
+  width: 50% ;
+  clear: both;
+  /*margin: 40px;*/
+}
+
+section#inventory-overview {
+  float: right;
+  width: 50%;
+}
+
+/*navigation*/
+
+NAV NACH GANZ OBEN SOMEHOW
+
+div#main-nav {
+  position: absolute;
+}
+
+nav {
+  float: right;
+  width: 66%;
+  text-align: right;
+}
+
+nav ul {
+  padding: 0;
+  margin: 20px 20px 30px 0;
+  list-style-type: none;
+  /*  */
+} 
+
+nav ul li {
+  display: inline;
+  margin: 15px 0px 15px 1px;
+  /*padding: 5px;*/
+}
+
+
+
+
+
+/*links*/
+#inactive-nav {
+  color: #999;
+}
+
+#inactive-nav:hover {
+  background-color: #d5d8d1;
+}
+
+nav ul li a {
+  color: #5c5c51;
+  background-color: #d5d8d1;
+  padding: 5px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #dad4a6;
+}
+
+nav ul li a:visited {
+  color: #5c5c51;
+}
+
+nav ul li a:active {
+  background-color: #dad4a6;
+}
+
+
+/*forms*/
+
+/*tables
