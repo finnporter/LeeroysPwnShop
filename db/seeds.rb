@@ -34,7 +34,7 @@ supplier_04 = Supplier.new({
 
 supplier_05 = Supplier.new({
   "name" => "Aimee Goldforge",
-  "locaton" => "Stormshield",
+  "location" => "Stormshield",
   "picture" => "http://wow.zamimg.com/uploads/screenshots/small/418017.jpg"
   })
 

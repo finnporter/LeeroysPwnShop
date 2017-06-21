@@ -1,8 +1,5 @@
 <h1>Suppliers</h1>
-
-<a href="/suppliers/add">Add Supplier</a>
-
-<table>
+<table class="table-div">
   <tr>
     <th>Name</th>
     <th>Location</th>
@@ -11,7 +8,7 @@
   <tr>
     <td><a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></td>
     <td><%= supplier.location %></td>
-    <td><a href="/suppliers/<%= supplier.id %>/edit">Edit Supplier</a></td>
+    <td><a class="link-to-button" href="/suppliers/<%= supplier.id %>/edit">Edit Supplier</a></td>
   <% end %>
   </tr>
 

@@ -3,8 +3,11 @@
     <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<%= @supplier.name %>">
 
-    <label for "picture"> Link to map:</label>
-    <input id="picture" type="text" name="picture">
+    <label for="location">Location:</label>
+    <input id="location" type="text" name="location" value="<%= @supplier.location %>">
+
+    <label for "picture"> Profile picture:</label>
+    <input id="picture" type="text" name="picture" value="<%= @supplier.picture %>">
 
   <input type="submit" value="Update Supplier">
 </form>

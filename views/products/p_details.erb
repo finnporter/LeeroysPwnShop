@@ -20,8 +20,8 @@
   <tr>
     <td><a href="/products/<%= @product.id %>"><%= @product.name %></a></td>
     <td><%= @product.which_type.type %></td>
-    <td><%= @product.quantity %></td>
-    <td><% if @product.quantity <= 3 %>
+    <td class="td-center"><%= @product.quantity %></td>
+    <td class="dot"><% if @product.quantity <= 3 %>
           <img src="/img/ico_red.png">
         <% elsif @product.quantity >= 20 %>
           <img src="/img/ico_green.png">
@@ -29,9 +29,9 @@
           <img src="/img/ico_yellow.png">
       <% end %>
     </td>
-    <td><%= @product.buy_price %></td>
-    <td><%= @product.sell_price %></td>
-    <td><%= @product.calculate_markup %></td>
+    <td class="td-center"><%= @product.buy_price %></td>
+    <td class="td-center"><%= @product.sell_price %></td>
+    <td class="td-center"><%= @product.calculate_markup %></td>
     <td> <a href="/suppliers/<%= @product.id %>"><%= @product.which_supplier.name %></a></td>
     <td><a href="/order">Order more</a></td>
     <td><a href="/products/<%= @product.id %>/edit">Edit Product</a></td>

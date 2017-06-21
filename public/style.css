@@ -1,5 +1,5 @@
+/* Palette*/
 /*
-Palette
 #dad4a6
 #FFD700
 #ffbf37
@@ -7,6 +7,7 @@ Palette
 #d5d8d1
 #eeeeee
 #8c8c85
+#202020
 */
 
 /*tags*/
@@ -25,7 +26,6 @@ h1 {
   margin-left: 450px;
   margin-top: 75px;
   display: inline-block;
-  float: center;
   width: 100%;
   position: initial;
 }
@@ -85,54 +85,11 @@ nav ul {
   padding: 0;
   margin: 20px 20px 30px 0;
   list-style-type: none;
-  /*  */
 } 
 
 nav ul li {
   display: inline-block;
   margin: 15px 0px 15px 1px;
-}
-
-hr {
-  border-color: #d5d8d1;
-  max-width: 90%;
-  margin-top: 30px;
-}
-
-/*footer*/
-
-footer section {
-  float: left;
-}
-
-footer section ul {
-  margin: 5px;
-  text-decoration: none;
-}
-
-footer section ul li {
-  display: inline-block;
-  margin: 15px 5px 15px 1px;
-}
-
-.grey-text {
-  color: #d5d8d1;
-  text-decoration: none;
-}
-
-#copyright {
-  float: right;
-  margin-right: 30px;
-}
-
-
-/*links*/
-.inactive-nav {
-  color: #999;
-}
-
-.inactive-nav:hover {
-  background-color: #8c8c85;
 }
 
 nav ul li a {
@@ -154,24 +111,68 @@ nav ul li a:active {
   background-color: #dad4a6;
 }
 
+.inactive-nav {
+  color: #999;
+}
+
+.inactive-nav:hover {
+  background-color: #8c8c85;
+}
+
+/*footer*/
+hr {
+  border-color: #d5d8d1;
+  max-width: 90%;
+  margin-top: 30px;
+}
+
+footer section {
+  float: left;
+}
+
+footer section ul {
+  margin: 5px;
+}
+
+footer section ul li {
+  display: inline-block;
+  margin: 15px 5px 15px 1px;
+}
+
+.grey-text {
+  color: #d5d8d1;
+  text-decoration: none;
+}
+
+#copyright {
+  float: right;
+  margin-right: 30px;
+}
+
+
+/*links*/
+a {
+  text-decoration: none;
+  color: #202020;
+}
+
+a:hover {
+  color: #3e3e3e;
+}
+
+
 /*tables*/
-th.fin-left {
+.fin-left {
   text-align: left;
   padding: 10px;
 }
 
-td.fin-right {
+.fin-right {
   text-align: right;
 }
 
-.inv-overview {
-  height: 30px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
 .dot {
-  margin: 4px;
+  margin: 5px;
 }
 
 th {
@@ -194,13 +195,19 @@ th {
   margin: 0 auto;
 }
 
+.default-td {
+  height: 30px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 /*buttons*/
 .link-to-button {
   color: #d5d8d1;
   background-color: #9f9f9f;
   padding: 4px 4px 6px 4px;
   text-decoration: none;
-  border: 1px solid #ffbf37;
+  border: 1px solid #a1a198;
 }
 
 

@@ -19,18 +19,18 @@
   </section>
   <section id="inventory-overview">
     <h2>Inventory Overview</h2>
-    <table class="inv-overview">
+    <table class="default-td">
       <tr>
-        <th class="inv-overview">Product Name</th>
-        <th class="inv-overview">Items in Stock</th>
-        <th class="inv-overview"></th>
-        <th class="inv-overview">Order</th>
+        <th class="default-td">Product Name</th>
+        <th class="default-td">Items in Stock</th>
+        <th class="default-td"></th>
+        <th class="default-td">Order</th>
       </tr>
       <% @products.each do |product| %>
       <tr>
-        <td class="inv-overview"><%= product.name %></td>
-        <td class="inv-overview td-center"><%= product.quantity %></td>
-        <td class="inv-overview">
+        <td class="default-td"><%= product.name %></td>
+        <td class="default-td td-center"><%= product.quantity %></td>
+        <td class="default-td">
           <% if product.quantity <= 5 %>
           <img class="dot" src="/img/ico_red.png">
           <% elsif product.quantity >= 20 %>
@@ -39,7 +39,7 @@
           <img class="dot" src="/img/ico_yellow.png">
           <% end %>
         </td>
-        <td class="inv-overview"><a class="link-to-button" href="/order">Order more</a></td>
+        <td class="default-td"><a class="link-to-button" href="/order">Order more</a></td>
       </tr>
       <% end %>
     </table>
