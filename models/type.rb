@@ -11,7 +11,7 @@ class Type
   end
 
   def save()
-    sql = "INSERT INTO types (type) VALUES ('#{@type}') RETURNING id;"
+    sql = "INSERT INTO types (type) VALUES ('#{@type}') RETURNING *;"
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end

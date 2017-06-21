@@ -4,7 +4,7 @@
     <input id="name" type="text" name="name" value="<%= @product.name %>">
 
     <label for="type-id">Type</label>
-    <select id="tpye-id" name="tpye_id">
+    <select id="type-id" name="type_id">
       <% @types.each do |type| %>
       <option <%= "selected" if type.id == @product.type_id %>
         value="<%= type.id %>"><%= type.type %></option>
@@ -27,6 +27,8 @@
          value="<%= supplier.id %>"><%= supplier.name %></option>
       <% end %>
     </select>
+      <label for "picture"> Picture:</label>
+      <input id="picture" type="text" name="picture" value="<%= @product.picture %>">
 
   <input type="submit" value="Update Product">
 </form>

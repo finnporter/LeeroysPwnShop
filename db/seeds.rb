@@ -20,6 +20,8 @@ supplier_02 = Supplier.new({
   "picture" => "http://wow.zamimg.com/uploads/screenshots/small/497116.jpg"
   })
 
+supplier_03
+
 supplier_01.save
 supplier_02.save
 
@@ -43,11 +45,16 @@ type_05 = Type.new({
   "type" => "Staff"
   })
 
+type_06 = Type.new({
+  "type" => "Axe"
+  })
+
 type_01.save
 type_02.save
 type_03.save
 type_04.save
 type_05.save
+type_06.save
 
 
 product_01 = Product.new({

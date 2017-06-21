@@ -5,7 +5,7 @@
   <input id="name" type="text" name="name">
 
   <label for="type-id">Type</label>
-  <select id="tpye-id" name="tpye_id">
+  <select id="type-id" name="type_id">
     <% for type in @types %>
     <option value="<%= type.id %>"><%= type.type %></option>
     <% end %>
@@ -26,6 +26,8 @@
     <option value="<%= supplier.id %>"><%= supplier.name %></option>
     <% end %>
   </select>
+    <label for "picture"> Picture:</label>
+    <input id="picture" type="text" name="picture">
 
   <input type="submit" value="Add">
 </form>

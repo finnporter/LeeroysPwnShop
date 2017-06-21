@@ -1,4 +1,5 @@
 require( 'pg' )
+require 'pry-byebug'
 
 class SqlRunner
 
@@ -8,6 +9,7 @@ class SqlRunner
       result = db.exec( sql )
     rescue => exception
       result = exception
+      # binding.pry
     ensure
       db.close
     end
