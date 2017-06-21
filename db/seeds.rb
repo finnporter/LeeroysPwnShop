@@ -20,10 +20,50 @@ supplier_02 = Supplier.new({
   "picture" => "http://wow.zamimg.com/uploads/screenshots/small/497116.jpg"
   })
 
-supplier_03
+supplier_03 = Supplier.new({
+  "name" => "Bengus Deepforge",
+  "location" => "Ironforge",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/458022.jpg"
+  })
+
+supplier_04 = Supplier.new({
+  "name" => "Borgus Steelhand",
+  "location" => "Stormwind",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/444008.jpg"
+  })
+
+supplier_05 = Supplier.new({
+  "name" => "Aimee Goldforge",
+  "locaton" => "Stormshield",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/418017.jpg"
+  })
+
+supplier_06 = Supplier.new({
+  "name" => "Dwukk",
+  "location" => "Durotar",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/495018.jpg"
+  })
+
+supplier_07 = Supplier.new({
+  "name" => "Karn Stonehoof",
+  "location" => "Thunder Bluff",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/494442.jpg"
+  })
+
+supplier_08 = Supplier.new({
+  "name" => "James van Brunt",
+  "location" => "Undercity",
+  "picture" => "http://wow.zamimg.com/uploads/screenshots/small/36945.jpg"
+  })
 
 supplier_01.save
 supplier_02.save
+supplier_03.save
+supplier_04.save
+supplier_05.save
+supplier_06.save
+supplier_07.save
+supplier_08.save
 
 type_01 = Type.new({
   "type" => "One-handed sword"
