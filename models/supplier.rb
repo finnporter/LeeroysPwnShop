@@ -13,13 +13,29 @@ class Supplier
   end
   
   def save()
-    sql = "INSERT INTO suppliers (name, location, picture) VALUES ('#{@name}', '#{@location}', '#{@picture}') RETURNING id;"
+    sql = "INSERT INTO suppliers (
+      name, location, picture
+      ) 
+      VALUES 
+      (
+      '#{@name}', '#{@location}', '#{@picture}'
+      ) 
+      RETURNING id;"
+
     results = SqlRunner.run(sql)
     @id = results.first['id'].to_i
   end
 
   def update
-    sql = "UPDATE suppliers SET (id, name, location, picture) = (#{id}, '#{name}', '#{location}', '#{picture}') WHERE id = #{@id}"
+    sql = "UPDATE suppliers SET (
+      id, name, location, picture
+      ) 
+      = 
+      (
+      #{id}, '#{name}', '#{location}', '#{picture}'
+      ) 
+      WHERE id = #{@id};"
+      
     SqlRunner.run(sql)
   end
 
