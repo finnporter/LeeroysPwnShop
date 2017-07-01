@@ -24,7 +24,7 @@ body {
 h1 {
   font-family: Oleo Script;
   margin-left: 450px;
-  margin-top: 75px;
+  margin-top: 125px;
   display: inline-block;
   position: initial;
 }
@@ -84,11 +84,13 @@ section#inventory-overview {
 
 #supplier-details {
   margin-left: 42px;
-
+}
 
 /*navigation*/
-div#main-nav {
-  position: absolute;
+
+#main-nav {
+  position: fixed;
+  right: 0px;
 }
 
 nav {
@@ -288,4 +290,8 @@ input[type=number] {
   margin: 30px 0 60px 85px;
   max-height: 100%;
   padding: 12px 20px;
+}
+
+#spacer {
+  height: 100px;
 }

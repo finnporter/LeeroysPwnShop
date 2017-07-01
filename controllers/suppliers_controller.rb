@@ -11,8 +11,8 @@ get '/suppliers' do
 end
 
 #NEW
-get "/suppliers/add" do
-  erb(:"/suppliers/add")
+get "/suppliers/new" do
+  erb(:"/suppliers/new")
 end
 
 #DELETE

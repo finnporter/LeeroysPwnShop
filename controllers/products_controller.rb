@@ -48,10 +48,10 @@ get '/products/by_sell_price' do
 end
 
 #NEW
-get "/products/add" do
+get "/products/new" do
   @suppliers = Supplier.all
   @types = Type.all
-  erb(:"/products/add")
+  erb(:"/products/new")
 end
 
 #DELETE
