@@ -12,34 +12,40 @@ class Type
 
   def save()
     sql = "INSERT INTO types (type) VALUES ('#{@type}') RETURNING *;"
-    results = SqlRunner.run(sql)
+    values = []
+    results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
 
   def update
     sql = "UPDATE types SET (type) = ('#{@type}') WHERE id = #{@id}"
-    SqlRunner.run(sql)
+    values = []
+    SqlRunner.run(sql, values)
   end
 
   def delete
     sql = "DELETE FROM types WHERE id = #{@id}"
-    SqlRunner.run(sql)
+    values = []
+    SqlRunner.run(sql, values)
   end
 
   def self.all
     sql = "SELECT * FROM types"
-    results_hash = SqlRunner.run(sql)
+    values = []
+    results_hash = SqlRunner.run(sql, values)
     return results_hash.map { |type| Type.new(type) }
   end
 
   def self.delete_all
     sql = "DELETE FROM types"
-    SqlRunner.run(sql)
+    values = []
+    SqlRunner.run(sql, values)
   end
 
   def self.find(id)
     sql = "SELECT * FROM types WHERE id = #{id}"
-    results = SqlRunner.run(sql)
+    values = []
+    results = SqlRunner.run(sql, values)
     return Type.new(results.first)
   end
 

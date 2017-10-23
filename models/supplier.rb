@@ -18,11 +18,11 @@ class Supplier
       ) 
       VALUES 
       (
-      '#{@name}', '#{@location}', '#{@picture}'
+      $1, $2, $3
       ) 
       RETURNING id;"
-
-    results = SqlRunner.run(sql)
+    values = [@name, @location, @picture]
+    results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
 
@@ -32,38 +32,43 @@ class Supplier
       ) 
       = 
       (
-      #{id}, '#{name}', '#{location}', '#{picture}'
+      $1, $2, $3, $4
       ) 
       WHERE id = #{@id};"
-      
-    SqlRunner.run(sql)
+    values = [@id, @name, @location, @picture]  
+    SqlRunner.run(sql, values)
   end
 
   def delete
     sql = "DELETE FROM suppliers WHERE id = #{@id}"
-    SqlRunner.run(sql)
+    values = []
+    SqlRunner.run(sql, values)
   end
 
   def all_products
     sql = "SELECT * FROM products WHERE supplier_id = #{@id}"
-    products_hash = SqlRunner.run(sql)
+    values = []
+    products_hash = SqlRunner.run(sql, values)
     product = products_hash.map { |product| Product.new(product)  }
   end
 
   def self.all
     sql = "SELECT * FROM suppliers"
-    results_hash = SqlRunner.run(sql)
+    values = []
+    results_hash = SqlRunner.run(sql, values)
     return results_hash.map { |supplier| Supplier.new(supplier) }
   end
 
   def self.delete_all
     sql = "DELETE FROM suppliers"
-    SqlRunner.run(sql)
+    values = []
+    SqlRunner.run(sql, values)
   end
 
   def self.find(id)
     sql = "SELECT * FROM suppliers WHERE id = #{id}"
-    results = SqlRunner.run(sql)
+    values = []
+    results = SqlRunner.run(sql, values)
     return Supplier.new(results.first)
   end
   

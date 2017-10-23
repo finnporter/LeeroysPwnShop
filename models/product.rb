@@ -4,13 +4,13 @@ require 'pry-byebug'
 class Product
 
   attr_accessor :name,
-  :quantity,
-  :buy_price,
-  :sell_price,
-  :picture
+                :quantity,
+                :buy_price,
+                :sell_price,
+                :picture
   attr_reader   :id,
-  :supplier_id,
-  :type_id
+                :supplier_id,
+                :type_id
 
   def initialize(options)
     @id = options['id'].to_i
@@ -30,11 +30,11 @@ def save
     ) 
     VALUES 
     (
-    '#{@name}', #{@quantity}, #{@buy_price}, #{@sell_price}, '#{@picture}', #{@supplier_id}, #{@type_id}
+    $1, $2, $3, $4, $5, $6, $7
     ) 
     RETURNING *;"
-
-  results = SqlRunner.run(sql)
+  values = [@name, @quantity, @buy_price, @sell_price, @picture, @supplier_id, type_id]
+  results = SqlRunner.run(sql, values)
   @id = results.first['id'].to_i
 end
 
@@ -44,48 +44,54 @@ def update
     )
     = 
     (
-    '#{@name}', #{@quantity}, #{@buy_price}, #{@sell_price}, '#{@picture}', #{@supplier_id}, #{@type_id}
+    $1, $2, $3, $4, $5, $6, $7
     ) 
     WHERE id = #{@id};"
-    
-  SqlRunner.run(sql)
+  values = [@name, @quantity, @buy_price, @sell_price, @picture, @supplier_id, type_id]  
+  SqlRunner.run(sql, values)
 end
 
 def delete
   sql = "DELETE FROM products WHERE id = #{@id}"
-  SqlRunner.run(sql)
+  values = []
+  SqlRunner.run(sql, values)
 end
 
 #CLASS FUNCTIONS
 def self.all
   sql = "SELECT * FROM products"
-  results_hash = SqlRunner.run(sql)
+  values = []
+  results_hash = SqlRunner.run(sql, values)
   return results_hash.map { |product| Product.new(product) }
 end
 
 def self.delete_all
   sql = "DELETE FROM products"
-  SqlRunner.run(sql)
+  values = []
+  SqlRunner.run(sql, values)
 end
 
 def self.find(id)
   sql = "SELECT * FROM products WHERE id = #{id}"
-  results = SqlRunner.run(sql)
+  values = []
+  results = SqlRunner.run(sql, values)
   return Product.new(results.first)
 end
 
 # EXTRA FUNCTIONS
 def which_supplier
-  sql = "SELECT * FROM suppliers WHERE id = #{supplier_id}"
-  results =SqlRunner.run(sql)
+  sql = "SELECT * FROM suppliers WHERE id = $1"
+  values = [@supplier_id]
+  results =SqlRunner.run(sql, values)
   supplier_data = results[0]
   supplier = Supplier.new(supplier_data)
   return supplier
 end
 
 def which_type
-  sql = "SELECT * FROM types WHERE id = #{@type_id}"
-  results =SqlRunner.run(sql)
+  sql = "SELECT * FROM types WHERE id = $1"
+  values = [@type_id]
+  results =SqlRunner.run(sql, values)
   type_data = results[0]
   type = Type.new(type_data)
   return type
